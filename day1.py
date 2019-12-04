@@ -17,6 +17,4 @@ def solve_day1(input_file_name):
                 fuel = 0
             part2 += fuel
 
-    print(part1)
-    print(part2)
     return part1, part2
