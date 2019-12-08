@@ -21,7 +21,6 @@ def solve_day8(input_file_name):
 
     result = fewest_0[1].count('1') * fewest_0[1].count('2')
 
-
     final = None
     image.reverse()
     for layer in image:
