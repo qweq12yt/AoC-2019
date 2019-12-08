@@ -37,7 +37,7 @@ def solve_day8(input_file_name):
         line = ''
         for pixel in temp:
             if pixel == '1':
-                line += '@'
+                line += '█'
             else:
                 line += ' '
         image += line + '\n'
