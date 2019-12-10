@@ -5,8 +5,12 @@ def file_input(file_name, key=str):
     file = open(file_name, 'r')
     data = []
     for line in file:
-        data.append(key(line.strip('\n')))
-    return data
+        l = []
+        for char in line:
+            if char != '\n':
+                l.append(key(char))
+        data.append(l)
+    return data.copy()
 
 
 """Loads a file and returns the first line separated according to the parameter sep"""
@@ -18,7 +22,7 @@ def file_input_line(file_name, sep=' ', key=str, strip=''):
     file = file.split(sep)
     for item in file:
         data.append(key(item))
-    return data
+    return data.copy()
 
 
 """Prints any 2d grid (matrix). Good for debuging!"""
