@@ -1,15 +1,19 @@
 """Loads a file and returns every single line as a entry in a array"""
 
 
-def file_input(file_name, key=str):
+def file_input(file_name, key=str, as_list=True):
     file = open(file_name, 'r')
     data = []
-    for line in file:
-        l = []
-        for char in line:
-            if char != '\n':
-                l.append(key(char))
-        data.append(l)
+    if as_list:
+        for line in file:
+            l = []
+            for char in line:
+                if char != '\n':
+                    l.append(key(char))
+            data.append(l)
+    else:
+        for line in file:
+            data.append(line.strip('\n'))
     return data.copy()
 
 
